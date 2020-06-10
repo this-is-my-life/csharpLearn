@@ -9,15 +9,15 @@ using Discord.WebSocket;
 
 namespace csharpLearn
 {
-    class Program
+    internal static class Program
     {
         private static CommandService command;
         private static DiscordSocketClient client;
         
         private static void Main()
-            => new Program().MainAsync().GetAwaiter().GetResult();
+            => MainAsync().GetAwaiter().GetResult();
 
-        private async Task MainAsync()
+        private static async Task MainAsync()
         {
             var config = await File.ReadAllLinesAsync("config.txt");
             command = new CommandService();
